@@ -1,0 +1,32 @@
+<div class="full-height full-width">
+  <p class="my-1">
+    <strong>
+      Files
+    </strong>
+  </p>
+
+  <div class="files-list mx-auto">
+    <div class="file-item mx-1 my-1 px-2"
+         *ngFor="let file of inputFiles">
+      <mat-icon class="color-icon my-1"
+               aria-hidden="false"
+               aria-label="color"
+               color="{{file.color}}"
+               (click)="onChangeColor(file)">label</mat-icon>
+      <div class="file-name"
+            (click)="openImage(file)">{{getName(file)}}</div>
+      <mat-icon *ngIf="file.viewed"
+                class="view-icon my-1"
+                aria-hidden="false"
+                aria-label="view"
+                (click)="onChangeViewed(file)">remove_red_eye</mat-icon>
+      <mat-icon *ngIf="!file.viewed"
+                class="view-icon my-1"
+                aria-hidden="false"
+                aria-label="view"
+                (click)="onChangeViewed(file)"
+                style="opacity: 10%;">remove_red_eye</mat-icon>
+    </div>
+  </div>
+
+</div>

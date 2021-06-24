@@ -1,0 +1,127 @@
+{
+  "name": "cvert-ng",
+  "description": "Computer Vision Emergency Toolkit",
+  "homepage": "http://cver.hrail.crasar.org/",
+  "version": "0.0.3",
+  "author": {
+    "name": "Paul Faugeras",
+    "email": "polofgrs@gmail.com"
+  },
+  "main": "electron/dist/main.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "electron": "ng build --base-href ./ && tsc --p electron && electron ."
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^8.2.13",
+    "@angular/cdk": "^8.2.3",
+    "@angular/common": "~8.2.13",
+    "@angular/compiler": "~8.2.13",
+    "@angular/core": "~8.2.13",
+    "@angular/forms": "~8.2.13",
+    "@angular/material": "^8.2.3",
+    "@angular/platform-browser": "~8.2.13",
+    "@angular/platform-browser-dynamic": "~8.2.13",
+    "@angular/router": "~8.2.13",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
+    "core-js": "^3.4.0",
+    "exifr": "^2.1.1",
+    "fast-xml-parser": "^3.14.0",
+    "hammerjs": "^2.0.8",
+    "html2canvas": "^1.0.0-rc.5",
+    "jimp": "^0.8.4",
+    "jquery": "^3.4.1",
+    "ng5-slider": "1.2.0",
+    "path": "^0.12.7",
+    "popper.js": "^1.15.0",
+    "rxjs": "~6.5.3",
+    "three": "^0.110.0",
+    "tinycolor2": "^1.4.1",
+    "tslib": "^1.9.0",
+    "usng.js": "^0.4.2",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.18",
+    "@angular/cli": "~8.3.18",
+    "@angular/compiler-cli": "~8.2.13",
+    "@angular/language-service": "~8.2.13",
+    "@types/electron": "^1.6.10",
+    "@types/jasmine": "~3.4.6",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.12.7",
+    "@types/webgl2": "0.0.5",
+    "codelyzer": "^5.0.1",
+    "electron": "^7.1.1",
+    "electron-builder": "^21.2.0",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.4.1",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "protractor": "~5.4.0",
+    "ts-node": "~8.4.1",
+    "tslint": "~5.20.1",
+    "typescript": "~3.5.3"
+  },
+  "build": {
+    "appId": "CVERT",
+    "files": [
+      "**/*",
+      "dist/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "./../python-server/dist/",
+        "to": "serverExecutables",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "./src/assets/algorithmParameters.json",
+        "to": "assets/algorithmParameters.json",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "output": "releases",
+      "buildResources": "dist"
+    },
+    "dmg": {
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 50,
+          "y": 240
+        },
+        {
+          "x": 400,
+          "y": 240,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

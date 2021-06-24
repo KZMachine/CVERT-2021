@@ -1,0 +1,66 @@
+<div class="container mt-2" *ngIf="currentFilter">
+  <form class="form">
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="currentFilter.name" name="name">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Type</mat-label>
+      <mat-select [(ngModel)]="currentFilter.filter.name"
+                  name="type"
+                  (selectionChange)="changeFilter()">
+        <mat-optgroup label="Basic filters">
+          <mat-option *ngFor="let filter of filters" [value]="filter.name">
+            {{filter.name}}
+          </mat-option>
+        </mat-optgroup>
+        <mat-optgroup label="Advanced filters">
+          <mat-option *ngFor="let filter of serverFilters" [value]="filter.name">
+            {{filter.name}}
+          </mat-option>
+        </mat-optgroup>
+        <mat-optgroup label="Miscellaneous">
+          <mat-option *ngFor="let filter of miscFilters" [value]="filter.name">
+            {{filter.name}}
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="full-width"
+         *ngFor="let arg of currentFilter.filter.args">
+      <mat-slider *ngIf="arg.type == 'number'"
+                  class="full-width"
+                  thumbLabel="true"
+                  [min]="arg.min"
+                  [max]="arg.max"
+                  [(value)]="arg.value"></mat-slider>
+
+      <mat-form-field class="full-width" *ngIf="arg.type == 'rgb'">
+        <mat-label>{{arg.name}}</mat-label>
+        <input matInput
+               type="color"
+               name="color"
+               [(ngModel)]="arg.value">
+      </mat-form-field>
+
+      <div class="custom-slider">
+        <ng5-slider *ngIf="arg.type == 'range'"
+                    id="{{arg.name}}-slider"
+                    [(value)]="arg.low"
+                    [(highValue)]="arg.high"
+                    [options]="getRangeOptions(arg)">
+        </ng5-slider>
+      </div>
+
+      <button mat-raised-button color="primary"
+              *ngIf="arg.type == 'button'"
+              class="full-width"
+              (click)="openParameters()">
+        Edit Server Parameters
+      </button>
+    </div>
+
+  </form>
+</div>

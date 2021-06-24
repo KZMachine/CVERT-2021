@@ -1,0 +1,222 @@
+{
+  "filters": [{
+    "name": "lighten",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "brighten",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "darken",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "desaturate",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "saturate",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "greyscale",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "hue",
+    "args": [
+      {
+        "name": "degree",
+        "type": "number",
+        "value": 0,
+        "min": -360,
+        "max": 360
+      }
+    ]
+  },
+  {
+    "name": "mix",
+    "args": [
+      {
+        "name": "color",
+        "type": "rgb",
+        "value": "#000000"
+      },
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "tint",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "shade",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "xor",
+    "args": [
+      {
+        "name": "color",
+        "type": "rgb",
+        "value": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "red",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "green",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "name": "blue",
+    "args": [
+      {
+        "name": "amount",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  }],
+
+  "serverFilters" : [{
+    "name": "RXDetector",
+    "libName": "RXDetector",
+    "pyFunction": "RXD",
+    "args": [{"type": "button"}]
+  },
+  {
+    "name": "DebrisDetect",
+    "libName": "DXDetector",
+    "pyFunction": "DebrisDetect",
+    "args": [{"type": "button"}]
+  },
+  {
+    "name": "Dehaze",
+    "libName": "AODNet",
+    "pyFunction": "Dehaze",
+    "args": [{"type": "button"}]
+  }],
+
+  "miscFilters" : [{
+    "name": "Histogram",
+    "args": [
+      {
+        "name": "R",
+        "type": "range",
+        "low": 0,
+        "high": 255,
+        "min": 0,
+        "max": 255
+      },
+      {
+        "name": "G",
+        "type": "range",
+        "low": 0,
+        "high": 255,
+        "min": 0,
+        "max": 255
+      },
+      {
+        "name": "B",
+        "type": "range",
+        "low": 0,
+        "high": 255,
+        "min": 0,
+        "max": 255
+      }
+    ]
+  }]
+}

@@ -1,0 +1,38 @@
+<div class="full-height full-width">
+  <p class="my-1">
+    <strong>
+      Filters
+    </strong>
+  </p>
+
+  <div cdkDropList class="filters-list mx-auto" (cdkDropListDropped)="drop($event)">
+    <div class="filters-item mx-1 my-1 px-2"
+         *ngFor="let filter of filtersList"
+         cdkDrag>
+     <mat-icon class="edit-icon my-1"
+               aria-hidden="false"
+               aria-label="edit"
+               (click)="editFilter(filter)">edit</mat-icon>
+      {{filter.name}}
+      <mat-icon class="delete-icon my-1"
+                aria-hidden="false"
+                aria-label="delete"
+                (click)="removeFilterFromList(filter)">clear</mat-icon>
+    </div>
+    <div class="add-filter-item mx-1 my-1 px-2">
+      Add Filter
+      <mat-icon class="add-icon my-1"
+                aria-hidden="false"
+                aria-label="add"
+                (click)="addFilter()">add</mat-icon>
+    </div>
+  </div>
+
+  <div class="apply-filters-button mx-auto my-2">
+    <button mat-raised-button color="primary"
+            [disabled]="!topImage || !filtersList.length"
+            (click)="applyFilters()">
+      Apply filters
+    </button>
+  </div>
+</div>

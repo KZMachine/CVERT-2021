@@ -1,0 +1,51 @@
+<div class="container-fluid full-height">
+  <div class="row full-height">
+
+    <div class="col-3 full-height" id="left-panel">
+      <div class="row" id="filters-tab">
+        <app-filters-tab class="full-width full-heigth"
+                         [(topImage)]="topImage"
+                         [(bottomImage)]="bottomImage"
+                         [(filtersList)]="filtersList"
+                         [(currentFilter)]="currentFilter"></app-filters-tab>
+      </div>
+      <div class="row" id="filter-edit">
+        <app-filter-edit-tab class="full-width full-height" [(currentFilter)]="currentFilter"></app-filter-edit-tab>
+      </div>
+      <div class="row" id="server-tab">
+        <app-server-tab></app-server-tab>
+      </div>
+    </div>
+
+    <div class="col-6 full-height" id="center-panel">
+      <div class="row" id="top-picture">
+        <app-image-tab [(image)]="topImage" [addOverlay]="false" [containerId]="'top-container'" id="top-image"></app-image-tab>
+      </div>
+      <div class="row" id="bottom-picture">
+        <app-image-tab [(image)]="bottomImage" [addOverlay]="true" [containerId]="'bottom-container'" id="bottom-image"></app-image-tab>
+      </div>
+    </div>
+
+    <div class="col-3 full-height" id="right-panel">
+      <div class="row" id="GPS-tab">
+        <app-gps-tab *ngIf="topImage && gisService.gis" [(gisData)]="gisService.gis"></app-gps-tab>
+      </div>
+      <div class="row" id="file-list">
+        <app-file-list-tab class="full-height full-width"
+                            [(inputFiles)]="inputFiles"
+                            [(topImage)]="topImage"
+                            [(bottomImage)]="bottomImage"></app-file-list-tab>
+      </div>
+      <div class="row" id="histogram">
+        <app-histogram-tab *ngIf="bottomImage" class="full-height full-width" [(histogramData)]="bottomImage.histogram"></app-histogram-tab>
+      </div>
+      <div class="row" id="actions-tab">
+        <app-action-tab class="full-height full-width"
+                        [(inputFiles)]="inputFiles"
+                        [(bottomImage)]="bottomImage"
+                        [(filtersList)]="filtersList"></app-action-tab>
+      </div>
+    </div>
+
+  </div>
+</div>

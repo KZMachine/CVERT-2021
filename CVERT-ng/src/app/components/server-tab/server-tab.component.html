@@ -1,0 +1,29 @@
+<div class="container p-2" *ngIf="server">
+  <form class="form">
+
+    <div class="row mx-1 full-width align-items-center">
+      <mat-form-field class="col-4 px-1">
+        <mat-label>IP address</mat-label>
+        <input matInput [(ngModel)]="server.ip"
+                        type="text"
+                        pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$"
+                        name="ip">
+      </mat-form-field>
+
+      <mat-form-field class="col-4 px-1">
+        <mat-label>Port</mat-label>
+        <input matInput [(ngModel)]="server.port"
+                        type="text"
+                        pattern="^()([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5])$"
+                        name="port">
+      </mat-form-field>
+
+      <div class="col-4 px-1">
+        <button mat-button color="warn" (click)="reset()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>

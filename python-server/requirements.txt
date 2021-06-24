@@ -1,0 +1,21 @@
+# requirements file
+# run using Python >= 3.6 with `pip3 install -r requirements.txt`
+
+opencv-python
+opencv-contrib-python
+numpy
+scipy
+scikit-learn
+spectral
+argparse
+matplotlib
+pillow
+beautifulsoup4
+tornado
+
+flask
+flask_cors
+
+pyinstaller
+
+pypiwin32; sys_platform == 'win32'

@@ -1,0 +1,41 @@
+p {
+  height: 5%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.files-list {
+  width: 90%;
+  height: 90%;
+  border: solid 2px #444;
+  // min-height: 60px;
+  // display: block;
+  background: black;
+  border-radius: 10px;
+  //overflow: hidden;
+  overflow-y:auto;
+}
+
+.file-item {
+  //padding: 20px 10px;
+  border: solid 1px #888;
+  // color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  //box-sizing: border-box;
+  background: #444;
+  //font-size: 14px;
+  border-radius: 4px;
+}
+
+.color-icon, .view-icon, .file-name {
+  cursor: pointer;
+}

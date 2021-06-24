@@ -1,0 +1,86 @@
+{
+  "algorithmParameters" : [{
+    "name": "RxThreshold",
+    "useDefault": true,
+    "defaultValue": 90,
+    "userValue": 90
+  },
+  {
+    "name": "RxChiThreshold",
+    "useDefault": true,
+    "defaultValue": 0.999,
+    "userValue": 0.999
+  },
+  {
+    "name": "LineGaussianIter",
+    "useDefault": true,
+    "defaultValue": 0,
+    "userValue": 0
+  },
+  {
+    "name": "LineDilationIter",
+    "useDefault": true,
+    "defaultValue": 1,
+    "userValue": 1
+  },
+  {
+    "name": "LineBilatBlurColor",
+    "useDefault": true,
+    "defaultValue": 75,
+    "userValue": 75
+  },
+  {
+    "name": "LineBilatBlurSpace",
+    "useDefault": true,
+    "defaultValue": 75,
+    "userValue": 75
+  },
+  {
+    "name": "LineCannyEdgeLowerBound",
+    "useDefault": true,
+    "defaultValue": 100,
+    "userValue": 100
+  },
+  {
+    "name": "LineCannyEdgeThreshold",
+    "useDefault": true,
+    "defaultValue": 140,
+    "userValue": 140
+  },
+  {
+    "name": "CornerGaussianIter",
+    "useDefault": true,
+    "defaultValue": 0,
+    "userValue": 0
+  },
+  {
+    "name": "CornerErosionIter",
+    "useDefault": true,
+    "defaultValue": 1,
+    "userValue": 1
+  },
+  {
+    "name": "CornerBilateralColor",
+    "useDefault": true,
+    "defaultValue": 200,
+    "userValue": 200
+  },
+  {
+    "name": "CornerBilateralSpace",
+    "useDefault": true,
+    "defaultValue": 500,
+    "userValue": 500
+  },
+  {
+    "name": "CornerMaxDistance",
+    "useDefault": true,
+    "defaultValue": 75,
+    "userValue": 75
+  },
+  {
+    "name": "CornerNumPoints",
+    "useDefault": true,
+    "defaultValue": 3,
+    "userValue": 3
+  }]
+}

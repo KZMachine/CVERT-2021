@@ -1,0 +1,13 @@
+<div class="topContainer mx-0 p-2" *ngIf="algorithmParameters">
+  <div class="row m-1 justify-content-md-center">
+    <app-algorithm-parameter-item class="m-1 px-2" *ngFor="let parameter of algorithmParameters" [(parameter)]="parameter">
+    </app-algorithm-parameter-item>
+  </div>
+
+  <div class="row m-1 justify-content-md-center">
+    <button mat-raised-button color="primary" (click)="saveParameters()">
+      Save Parameters
+    </button>
+  </div>
+
+</div>

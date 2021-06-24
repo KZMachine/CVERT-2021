@@ -1,0 +1,68 @@
+<div class="col full-height pt-3 full-width">
+
+  <div class="row full-width mx-auto open-save">
+    <div class="col-6 save-button">
+      <button mat-raised-button color="primary" (click)="saveImage()" [disabled]="!bottomImage">
+        Save Image
+      </button>
+    </div>
+
+    <div class="col-6 open-button">
+      <button mat-raised-button color="primary" (click)="saveCanvas()" [disabled]="!bottomImage">
+        Save Overlay
+      </button>
+    </div>
+  </div>
+
+  <!--div class="row my-3 mx-auto full-width">
+    <div class="col-12 open-button">
+      <div class="input-group align-middle full-width mx-auto">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile" accept="image/*" multiple (change)="onInputChange($event)">
+          <label class="custom-file-label" for="inputGroupFile">{{inputFiles}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-3 mx-auto full-width">
+    <div class="col-12 open-button">
+      <div class="input-group align-middle full-width mx-auto">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="outputGroupFile" webkitdirectory directory (change)="onOutputChange($event)">
+          <label class="custom-file-label" for="outputGroupFile">{{outputFolder}}</label>
+        </div>
+      </div>
+    </div>
+  </div-->
+
+  <div class="row full-width mx-auto open-save">
+    <div class="col-6">
+      <button mat-raised-button (click)="getInputFiles()">
+        {{inputLabel}}
+      </button>
+    </div>
+    <div class="col-6">
+      <button mat-raised-button (click)="getOutputDirectory()">
+        {{outputLabel}}
+      </button>
+    </div>
+  </div>
+
+  <div class="row full-width mx-auto open-save">
+    <div class="col-6">
+      <button mat-raised-button color="accent" [disabled]="!filtersList.length || !inputFiles || !outputDir" (click)="applyFilters()">
+        Apply filters
+      </button>
+    </div>
+    <div class="col-6">
+      <button mat-raised-button color="accent"
+            [disabled]="!bottomImage || !inputFiles || !outputDir || !gisService.gis
+                      || !gisService.gis.markerLat || !gisService.gis.markerLon"
+            (click)="applyGPS()">
+        Look for GPS
+      </button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="parameterItem col-4 my-2">
+
+  <div class="row">
+    <mat-form-field>
+      <mat-label>{{parameter.name}}</mat-label>
+      <input matInput [(ngModel)]="parameter.userValue"
+                      [(disabled)]="parameter.useDefault"
+                      type="number"
+                      step="any"
+                      name="parameter.name">
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-checkbox
+      [(ngModel)]="parameter.useDefault"
+      labelPosition="after">
+    Use default ({{parameter.defaultValue}})
+    </mat-checkbox>
+  </div>
+
+</div>
